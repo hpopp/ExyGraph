@@ -10,6 +10,8 @@
 		A9701A621AF947A900CC1F69 /* ExyGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = A9701A611AF947A900CC1F69 /* ExyGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9701A681AF947AA00CC1F69 /* ExyGraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9701A5C1AF947A900CC1F69 /* ExyGraph.framework */; };
 		A9701A6F1AF947AA00CC1F69 /* ExyGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9701A6E1AF947AA00CC1F69 /* ExyGraphTests.swift */; };
+		A9701A791AF947B700CC1F69 /* ExyGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9701A781AF947B700CC1F69 /* ExyGraph.swift */; };
+		A9701A7B1AF947C400CC1F69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9701A7A1AF947C400CC1F69 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		A9701A671AF947AA00CC1F69 /* ExyGraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExyGraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9701A6D1AF947AA00CC1F69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9701A6E1AF947AA00CC1F69 /* ExyGraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExyGraphTests.swift; sourceTree = "<group>"; };
+		A9701A781AF947B700CC1F69 /* ExyGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExyGraph.swift; sourceTree = "<group>"; };
+		A9701A7A1AF947C400CC1F69 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				A9701A611AF947A900CC1F69 /* ExyGraph.h */,
+				A9701A781AF947B700CC1F69 /* ExyGraph.swift */,
+				A9701A7A1AF947C400CC1F69 /* Main.storyboard */,
 				A9701A5F1AF947A900CC1F69 /* Supporting Files */,
 			);
 			path = ExyGraph;
@@ -192,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9701A7B1AF947C400CC1F69 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9701A791AF947B700CC1F69 /* ExyGraph.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +331,8 @@
 		A9701A731AF947AA00CC1F69 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -332,12 +342,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A9701A741AF947AA00CC1F69 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
