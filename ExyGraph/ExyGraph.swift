@@ -11,10 +11,10 @@ import Foundation
 import UIKit
 
 @IBDesignable
-class Graph: UIView {
+class ExyGraph: UIView {
     
-    class Plot {
-        var points: [Point] = []
+    class ExyPlot {
+        var points: [ExyPoint] = []
         var strokeColor: UIColor
         var strokeWidth: CGFloat = 1.0
         var pointRadius: CGFloat = 2.0
@@ -46,7 +46,7 @@ class Graph: UIView {
         }
     }
     
-    struct Point {
+    struct ExyPoint {
         var object: AnyObject
         var value: CGFloat
         
@@ -56,11 +56,11 @@ class Graph: UIView {
         }
     }
     
-    var data: [Plot] = []
+    var data: [ExyPlot] = []
     
-    @IBInspectable var topColor: UIColor = UIColor.blueColor()
-    @IBInspectable var bottomColor: UIColor = UIColor.blueColor()
-    @IBInspectable var axisColor: UIColor = UIColor.greenColor()
+    @IBInspectable var topColor: UIColor = UIColor.redColor()
+    @IBInspectable var bottomColor: UIColor = UIColor.redColor()
+    @IBInspectable var axisColor: UIColor = UIColor.whiteColor()
     @IBInspectable var xAxisLabel: String = ""
     @IBInspectable var yAxisLabel: String = ""
     
@@ -77,7 +77,7 @@ class Graph: UIView {
     // MARK: - Padding
     @IBInspectable var axisWidth: CGFloat = 5
     @IBInspectable var topPadding: CGFloat = 10
-    @IBInspectable var bottomPadding: CGFloat = 10
+    @IBInspectable var bottomPadding: CGFloat = 30
     @IBInspectable var leftPadding: CGFloat = 10
     @IBInspectable var rightPadding: CGFloat = 10
     
@@ -216,7 +216,7 @@ class Graph: UIView {
         CGContextRestoreGState(context)
     }
     
-    func drawPointLabels(points: [(CGFloat, CGFloat)], plot: Plot) {
+    func drawPointLabels(points: [(CGFloat, CGFloat)], plot: ExyPlot) {
         for var i = 0; i < points.count; i++ {
             if i % 4 == 0 {
                 let text = abbreviatedMonth(plot.points[i].object as! Int)
@@ -242,7 +242,7 @@ class Graph: UIView {
         }
     }
     
-    func projectPoints(points: [Point], xMin: CGFloat, yMin: CGFloat, xMax: CGFloat, yMax: CGFloat) -> [(CGFloat, CGFloat)] {
+    func projectPoints(points: [ExyPoint], xMin: CGFloat, yMin: CGFloat, xMax: CGFloat, yMax: CGFloat) -> [(CGFloat, CGFloat)] {
         let xRange = xMax - xMin
         let yRange = yMax - yMin
         
@@ -339,10 +339,10 @@ class Graph: UIView {
     }
     
     override func prepareForInterfaceBuilder() {
-        var plot = Plot()
-        for var i = 0.0; i < 100.0; i += 50 {
-            var y = i
-            var point = Point(object: i, value: CGFloat(y))
+        var plot = ExyPlot()
+        for var i = 0.0; i < 10.0; i++ {
+            var y = 5*sin(i)+20
+            var point = ExyPoint(object: i, value: CGFloat(y))
             plot.points.insert(point, atIndex: plot.points.count)
         }
         plot.strokeColor = UIColor.whiteColor()
